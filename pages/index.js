@@ -1,6 +1,7 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
+import Head from "next/head";
+import Image from "next/image";
+import styles from "../styles/Home.module.css";
+import { Card, Grid, Text, Link } from "@nextui-org/react";
 
 export default function Home() {
   return (
@@ -17,7 +18,7 @@ export default function Home() {
         </h1>
 
         <p className={styles.description}>
-          Get started by editing{' '}
+          Get started by editing{" "}
           <code className={styles.code}>pages/index.js</code>
         </p>
 
@@ -52,6 +53,43 @@ export default function Home() {
             </p>
           </a>
         </div>
+        <div>
+          <Card css={{ p: "$6", mw: "400px" }}>
+            <Card.Header>
+              <img
+                alt="nextui logo"
+                src="https://avatars.githubusercontent.com/u/86160567?s=200&v=4"
+                width="34px"
+                height="34px"
+              />
+              <Grid.Container css={{ pl: "$6" }}>
+                <Grid xs={12}>
+                  <Text h4 css={{ lineHeight: "$xs" }}>
+                    Next UI
+                  </Text>
+                </Grid>
+                <Grid xs={12}>
+                  <Text css={{ color: "$accents8" }}>nextui.org</Text>
+                </Grid>
+              </Grid.Container>
+            </Card.Header>
+            <Card.Body css={{ py: "$2" }}>
+              <Text>
+                Make beautiful websites regardless of your design experience.
+              </Text>
+            </Card.Body>
+            <Card.Footer>
+              <Link
+                icon
+                color="primary"
+                target="_blank"
+                href="https://github.com/nextui-org/nextui"
+              >
+                Visit source code on GitHub.
+              </Link>
+            </Card.Footer>
+          </Card>
+        </div>
       </main>
 
       <footer className={styles.footer}>
@@ -60,12 +98,12 @@ export default function Home() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Powered by{' '}
+          Powered by{" "}
           <span className={styles.logo}>
             <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
           </span>
         </a>
       </footer>
     </div>
-  )
+  );
 }
