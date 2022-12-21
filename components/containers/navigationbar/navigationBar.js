@@ -107,7 +107,10 @@ export default function NavigationBar() {
       {/* second navigationBar */}
       <Navbar
         maxWidth="fluid"
-        css={{ position: "relative", borderTop: "1px solid #616161" }}
+        css={{
+          position: "relative",
+          borderTop: "$borderWeights$light solid #606060",
+        }}
       >
         <Navbar.Content
           enableCursorHighlight

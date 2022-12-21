@@ -7,7 +7,7 @@ import CarouselBanner from "../components/containers/carouselBanner/CarouselBann
 import MainSearchBar from "../components/common/searchBar/mainSearchBar/mainSearchBar";
 import PopularCategory from "../components/containers/popularCategory/popularCategory";
 import { PromotionCard } from "../components/common/cards/promotionCard";
-import RecommendCard from "../components/containers/recommendCard/recommendCard";
+import ProductCard from "../components/common/cards/productCard";
 
 export default function Home() {
   return (
@@ -20,9 +20,16 @@ export default function Home() {
           marginBottom: 100,
         }}
       >
-        <CarouselBanner />
+        <PromotionCard />
       </div>
-      <Container
+      {/* <div
+        style={{
+          marginBottom: 100,
+        }}
+      >
+        <CarouselBanner />
+      </div> */}
+      {/* <Container
         css={{
           display: "flex",
           justifyContent: "center",
@@ -36,18 +43,16 @@ export default function Home() {
         }}
       >
         <MainSearchBar />
-      </Container>
+      </Container> */}
       <Text
         h2
         css={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
+          paddingLeft: "5%",
           marginTop: 100,
-          marginBottom: 100,
+          marginBottom: 50,
           "@xsMax": {
             fontSize: 20,
-            marginTop: 0,
+            marginTop: 50,
             marginBottom: 50,
           },
         }}
@@ -57,17 +62,6 @@ export default function Home() {
       <Container>
         <PopularCategory />
       </Container>
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          marginTop: 100,
-          marginBottom: 100,
-        }}
-      >
-        <PromotionCard />
-      </div>
       <Text
         h2
         css={{
@@ -84,7 +78,7 @@ export default function Home() {
         RECCOMEND FOR YOU
       </Text>
       <Container>
-        <RecommendCard />
+        <ProductCard />
       </Container>
       <Container
         css={{

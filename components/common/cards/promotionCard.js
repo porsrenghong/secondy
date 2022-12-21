@@ -1,7 +1,7 @@
 import { Card, Col, Row, Button, Text } from "@nextui-org/react";
 
 export const PromotionCard = () => (
-  <Card css={{ w: "70%", h: "400px" }}>
+  <Card shadow css={{ w: "100%", h: "500px", borderRadius: 0 }}>
     <Card.Header css={{ position: "absolute", zIndex: 1, top: 5 }}>
       <Col>
         <Text size={12} weight="bold" transform="uppercase" color="#ffffffAA">
@@ -22,21 +22,18 @@ export const PromotionCard = () => (
       />
     </Card.Body>
     <Card.Footer
-      isBlurred
       css={{
         position: "absolute",
-        bgBlur: "#ffffff66",
-        borderTop: "$borderWeights$light solid rgba(255, 255, 255, 0.2)",
         bottom: 0,
         zIndex: 1,
       }}
     >
       <Row>
         <Col>
-          <Text color="#000" size={12}>
+          <Text color="#fff" size={12}>
             Available now.
           </Text>
-          <Text color="#000" size={12}>
+          <Text color="#fff" size={12}>
             Check out now.
           </Text>
         </Col>
