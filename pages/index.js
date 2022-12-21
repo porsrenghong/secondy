@@ -27,7 +27,7 @@ export default function Home() {
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
-          MarginTop: 50,
+          MarginTop: 100,
           marginBottom: 100,
           "@xsMax": {
             marginTop: 0,
