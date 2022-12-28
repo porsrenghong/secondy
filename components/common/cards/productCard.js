@@ -65,7 +65,6 @@ export default function ProductCard() {
           >
             <Card.Body
               css={{
-                p: 10,
                 "@xsMax": {
                   w: "100%",
                   height: 200,
@@ -78,6 +77,7 @@ export default function ProductCard() {
                 width="100%"
                 height={300}
                 alt={item.title}
+                css={{ borderRadius: 10 }}
               />
             </Card.Body>
             <Card.Footer css={{ display: "flex", flexDirection: "column" }}>

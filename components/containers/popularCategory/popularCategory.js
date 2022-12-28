@@ -6,8 +6,7 @@ import "swiper/css";
 
 import styles from "../../../styles/popularCategory.module.css";
 import "swiper/css/free-mode";
-import "swiper/css/scrollbar";
-import { Scrollbar, FreeMode, Autoplay } from "swiper";
+import { FreeMode, Autoplay } from "swiper";
 export default function PopularCategory() {
   const list = [
     {
@@ -49,57 +48,11 @@ export default function PopularCategory() {
 
   return (
     <>
-      {/* <Grid.Container gap={2} justify="center">
-        {list.map((item, index) => (
-          <Grid xs={6} sm={2} key={index}>
-            <Card
-              isHoverable
-              css={{
-                bg: "$black",
-                mw: "300px",
-                h: "200",
-                "@xsMax": { h: "150px" },
-              }}
-            >
-              <Card.Header css={{ position: "absolute", zIndex: 1, top: 5 }}>
-                <Col>
-                  <Text
-                    size={12}
-                    weight="bold"
-                    transform="uppercase"
-                    color="#ffffffAA"
-                    css={{ "@xsMax": { fontSize: "10px" } }}
-                  >
-                    {item.status}
-                  </Text>
-                  <Text
-                    h4
-                    color="white"
-                    css={{ "@xsMax": { fontSize: "15px" } }}
-                  >
-                    {item.category}
-                  </Text>
-                </Col>
-              </Card.Header>
-              <Card.Image
-                src={item.img}
-                width="100%"
-                height={340}
-                objectFit="cover"
-                alt="Card image background"
-              />
-            </Card>
-          </Grid>
-        ))}
-      </Grid.Container> */}
       <div className={styles.body}>
         <Swiper
           slidesPerView={5}
           spaceBetween={20}
           freeMode={true}
-          scrollbar={{
-            hide: true,
-          }}
           autoplay={{
             delay: 2000,
             disableOnInteraction: false,
@@ -130,7 +83,7 @@ export default function PopularCategory() {
               spaceBetween: 20,
             },
           }}
-          modules={[Scrollbar, FreeMode, Autoplay]}
+          modules={[FreeMode, Autoplay]}
           className={styles.mySwiper}
         >
           {list.map((item, index) => (

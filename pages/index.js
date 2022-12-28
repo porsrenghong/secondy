@@ -7,7 +7,10 @@ import CarouselBanner from "../components/containers/carouselBanner/CarouselBann
 import MainSearchBar from "../components/common/searchBar/mainSearchBar/mainSearchBar";
 import PopularCategory from "../components/containers/popularCategory/popularCategory";
 import { PromotionCard } from "../components/common/cards/promotionCard";
-import ProductCard from "../components/common/cards/productCard";
+import DealsCard from "../components/containers/dealsCard/dealsCard";
+import ChooseByBrand from "../components/containers/chooseByBrand/chooseByBrand";
+import DiscountPanel from "../components/containers/discountPanel/discountPanel";
+import WeeklyPopularProduct from "../components/containers/weeklyPopularProduct/weeklyPopularProduct";
 
 export default function Home() {
   return (
@@ -22,34 +25,12 @@ export default function Home() {
       >
         <PromotionCard />
       </div>
-      {/* <div
-        style={{
-          marginBottom: 100,
-        }}
-      >
-        <CarouselBanner />
-      </div> */}
-      {/* <Container
-        css={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          MarginTop: 50,
-          marginBottom: 100,
-          "@xsMax": {
-            marginTop: 0,
-            marginBottom: 0,
-          },
-        }}
-      >
-        <MainSearchBar />
-      </Container> */}
       <Text
-        h2
+        h3
         css={{
-          paddingLeft: "5%",
+          paddingLeft: "4%",
           marginTop: 100,
-          marginBottom: 50,
+          marginBottom: 25,
           "@xsMax": {
             fontSize: 20,
             marginTop: 50,
@@ -57,17 +38,15 @@ export default function Home() {
           },
         }}
       >
-        EXPLORE POPULAR CATEGORY
+        Shop Our Top Categories
       </Text>
-      <Container>
-        <PopularCategory />
-      </Container>
+      <PopularCategory />
       <Text
-        h2
+        h3
         css={{
-          paddingLeft: "5%",
+          paddingLeft: "4%",
           marginTop: 100,
-          marginBottom: 100,
+          marginBottom: 25,
           "@xsMax": {
             fontSize: 20,
             marginTop: 50,
@@ -75,11 +54,57 @@ export default function Home() {
           },
         }}
       >
-        RECCOMEND FOR YOU
+        Todays Best Deals For You!
       </Text>
-      <Container>
-        <ProductCard />
-      </Container>
+      <DealsCard />
+      <Text
+        h3
+        css={{
+          paddingLeft: "4%",
+          marginTop: 100,
+          marginBottom: 25,
+          "@xsMax": {
+            fontSize: 20,
+            marginTop: 50,
+            marginBottom: 50,
+          },
+        }}
+      >
+        Choose By Brand
+      </Text>
+      <ChooseByBrand />
+      <Text
+        h3
+        css={{
+          paddingLeft: "4%",
+          marginTop: 100,
+          marginBottom: 25,
+          "@xsMax": {
+            fontSize: 20,
+            marginTop: 50,
+            marginBottom: 50,
+          },
+        }}
+      >
+        Get Up To 70% OFF
+      </Text>
+      <DiscountPanel />
+      <Text
+        h3
+        css={{
+          paddingLeft: "4%",
+          marginTop: 100,
+          marginBottom: 25,
+          "@xsMax": {
+            fontSize: 20,
+            marginTop: 50,
+            marginBottom: 50,
+          },
+        }}
+      >
+        Weekly Popular Products
+      </Text>
+      <WeeklyPopularProduct />
       <Container
         css={{
           display: "flex",
