@@ -11,6 +11,8 @@ import DealsCard from "../components/containers/dealsCard/dealsCard";
 import ChooseByBrand from "../components/containers/chooseByBrand/chooseByBrand";
 import DiscountPanel from "../components/containers/discountPanel/discountPanel";
 import WeeklyPopularProduct from "../components/containers/weeklyPopularProduct/weeklyPopularProduct";
+import ImgBanner from "../components/containers/imgBanner/imgBanner";
+import ProductList from "../components/containers/productList/productList";
 
 export default function Home() {
   return (
@@ -57,7 +59,7 @@ export default function Home() {
         Todays Best Deals For You!
       </Text>
       <DealsCard />
-      <Text
+      {/* <Text
         h3
         css={{
           paddingLeft: "4%",
@@ -72,7 +74,7 @@ export default function Home() {
       >
         Choose By Brand
       </Text>
-      <ChooseByBrand />
+      <ChooseByBrand /> */}
       <Text
         h3
         css={{
@@ -89,7 +91,7 @@ export default function Home() {
         Get Up To 70% OFF
       </Text>
       <DiscountPanel />
-      <Text
+      {/* <Text
         h3
         css={{
           paddingLeft: "4%",
@@ -104,7 +106,24 @@ export default function Home() {
       >
         Weekly Popular Products
       </Text>
-      <WeeklyPopularProduct />
+      <WeeklyPopularProduct /> */}
+      <ImgBanner />
+      <Text
+        h3
+        css={{
+          paddingLeft: "4%",
+          marginTop: 100,
+          marginBottom: 25,
+          "@xsMax": {
+            fontSize: 20,
+            marginTop: 50,
+            marginBottom: 50,
+          },
+        }}
+      >
+        We Made Just For You !!
+      </Text>
+      <ProductList />
       <Container
         css={{
           display: "flex",

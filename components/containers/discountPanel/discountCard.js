@@ -5,6 +5,7 @@ const DiscountCard = ({ price, description, img }) => {
     <>
       <Card
         isPressable
+        isHoverable
         css={{
           mw: 250,
           height: 400,
