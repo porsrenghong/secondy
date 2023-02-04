@@ -96,7 +96,6 @@ const Dropzone = () => {
   //******** Preview Pics******* */
   const selected_images = selectedImages?.map((file) => (
     <Image
-      key={index}
       src={file.preview}
       width={200}
       height={200}

@@ -16,12 +16,11 @@ import {
   Link,
 } from "@nextui-org/react";
 import NavAfterLogin from "../../components/containers/navigationbar/navAfterLogin";
-const AllProducts = ({href}) => {
+const AllProducts = ({ href }) => {
   const [posts, setPosts] = useState([]);
   const postImages = (post) => {
     const post_images = post.images?.map((file) => (
       <Image
-      key={index}
         src={file}
         style={{ objectFit: "cover" }}
         width={250}
@@ -53,7 +52,7 @@ const AllProducts = ({href}) => {
       <Grid.Container gap={2} justify="center">
         {posts.map((post) => (
           <Grid key={post.id}>
-            <Link href={`/products/${post.id}`} >
+            <Link href={`/products/${post.id}`}>
               <Card
                 isPressable
                 isHoverable

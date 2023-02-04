@@ -1,0 +1,16 @@
+figure {
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  margin: 0;
+}
+
+figure:hover .mainImg {
+  opacity: 0;
+}
+
+.mainImg {
+  display: block;
+  width: 100%;
+  pointer-events: none;
+}
