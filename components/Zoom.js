@@ -1,5 +1,5 @@
 import { Component } from "react";
-
+import styles from "./../styles/componentsZoom.module.css";
 // const src = "https://images.unsplash.com/photo-1444065381814-865dc9da92c0";
 
 export default class Zoom extends Component {
@@ -20,7 +20,7 @@ export default class Zoom extends Component {
 
   render = () => (
     <figure onMouseMove={this.handleMouseMove} style={this.state}>
-      <img className="mainImg" src={this.props.src} />
+      <img className={styles.mainImg} src={this.props.src} />
     </figure>
   );
 }
