@@ -7,45 +7,49 @@ import "swiper/css";
 import styles from "../../../styles/popularCategory.module.css";
 import "swiper/css/free-mode";
 import { FreeMode, Autoplay } from "swiper";
+import { useRouter } from "next/router";
 export default function PopularCategory() {
   const list = [
     {
       status: "Trending",
-      img: "https://nextui.org/images/card-example-2.jpeg",
-      category: " Creates beauty like a beast",
+      img: "/category/phone.jpg",
+      category: "Phone",
     },
     {
       status: "Trending",
-      img: "https://nextui.org/images/card-example-2.jpeg",
-      category: " Creates beauty like a beast",
+      img: "/category/laptop.jpg",
+      category: "Laptop",
     },
     {
       status: "Trending",
-      img: "https://nextui.org/images/card-example-2.jpeg",
-      category: " Creates beauty like a beast",
+      img: "/category/headphone.jpg",
+      category: "Headset",
     },
     {
       status: "Trending",
-      img: "https://nextui.org/images/card-example-2.jpeg",
-      category: " Creates beauty like a beast",
+      img: "/category/sport-equipment.jpg",
+      category: "Sport Equipment",
     },
     {
       status: "Trending",
-      img: "https://nextui.org/images/card-example-2.jpeg",
-      category: " Creates beauty like a beast",
+      img: "/category/keyboard.jpg",
+      category: "Keyboard",
     },
     {
       status: "Trending",
-      img: "https://nextui.org/images/card-example-2.jpeg",
-      category: " Creates beauty like a beast",
+      img: "/category/books.jpg",
+      category: "Book",
     },
     {
       status: "Trending",
-      img: "https://nextui.org/images/card-example-2.jpeg",
-      category: " Creates beauty like a beast",
+      img: "/category/sneakers.jpg",
+      category: "Sneakers",
     },
   ];
-
+  const router = useRouter();
+  const handleMovePage = () => {
+    router.push("./products/");
+  };
   return (
     <>
       <div className={styles.body}>
@@ -89,6 +93,8 @@ export default function PopularCategory() {
           {list.map((item, index) => (
             <SwiperSlide key={index}>
               <Card
+                onPress={handleMovePage}
+                isPressable
                 isHoverable
                 css={{
                   bg: "$black",

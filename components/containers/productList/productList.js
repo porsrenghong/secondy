@@ -1,100 +1,73 @@
 import { Button, Card, Col, Grid, Row, Text } from "@nextui-org/react";
 import ReactStars from "react-rating-stars-component";
-
+import { useRouter } from "next/router";
 export default function ProductList() {
   const list = [
     {
-      title: "Orange",
-      img: "/images/fruit-1.jpeg",
+      title: "Water Bottle 500ml",
+      img: "/recommend_products/bottle.jpg",
+      price: "$7.50",
+    },
+    {
+      title: "Chair",
+      img: "/recommend_products/chair.jpg",
+      price: "$112.20",
+    },
+    {
+      title: "Earrings",
+      img: "/recommend_products/earrings.jpg",
       price: "$5.50",
     },
     {
-      title: "Tangerine",
-      img: "/images/fruit-2.jpeg",
-      price: "$3.00",
+      title: "Foorball Boot nike",
+      img: "/recommend_products/footballBoot.jpg",
+      price: "$39.00",
     },
     {
-      title: "Cherry",
-      img: "/images/fruit-3.jpeg",
+      title: "Salt bae glassess",
+      img: "/recommend_products/glassess.jpg",
       price: "$10.00",
     },
     {
-      title: "Lemon",
-      img: "/images/fruit-4.jpeg",
-      price: "$5.30",
+      title: "Hoodie + Sweatpants Set",
+      img: "/recommend_products/hoodieSet.jpg",
+      price: "$15.30",
     },
     {
-      title: "Avocado",
-      img: "/images/fruit-5.jpeg",
-      price: "$15.70",
+      title: "Sneakers",
+      img: "/recommend_products/sneakers.jpg",
+      price: "$8.70",
     },
     {
-      title: "Lemon 2",
-      img: "/images/fruit-6.jpeg",
+      title: "Addidas Gloves",
+      img: "/recommend_products/gloves.jpg",
+      price: "$28.00",
+    },
+    {
+      title: "Soccer Cleats",
+      img: "/recommend_products/boot.jpg",
+      price: "$27.50",
+    },
+    {
+      title: "Yankee Hat Custom LV",
+      img: "/recommend_products/yankee.jpg",
+      price: "$19.20",
+    },
+    {
+      title: "WindBreaker",
+      img: "/recommend_products/windbreaker.jpg",
       price: "$8.00",
     },
     {
-      title: "Banana",
-      img: "/images/fruit-7.jpeg",
-      price: "$7.50",
-    },
-    {
-      title: "Watermelon",
-      img: "/images/fruit-8.jpeg",
-      price: "$12.20",
-    },
-    {
-      title: "Orange",
-      img: "/images/fruit-1.jpeg",
-      price: "$5.50",
-    },
-    {
-      title: "Tangerine",
-      img: "/images/fruit-2.jpeg",
-      price: "$3.00",
-    },
-    {
-      title: "Cherry",
-      img: "/images/fruit-3.jpeg",
-      price: "$10.00",
-    },
-    {
-      title: "Lemon",
-      img: "/images/fruit-4.jpeg",
-      price: "$5.30",
-    },
-    {
-      title: "Avocado",
-      img: "/images/fruit-5.jpeg",
-      price: "$15.70",
-    },
-    {
-      title: "Lemon 2",
-      img: "/images/fruit-6.jpeg",
-      price: "$8.00",
-    },
-    {
-      title: "Banana",
-      img: "/images/fruit-7.jpeg",
-      price: "$7.50",
-    },
-    {
-      title: "Watermelon",
-      img: "/images/fruit-8.jpeg",
-      price: "$12.20",
-    },
-    {
-      title: "Lemon 2",
-      img: "/images/fruit-6.jpeg",
-      price: "$8.00",
-    },
-    {
-      title: "Banana",
-      img: "/images/fruit-7.jpeg",
-      price: "$7.50",
+      title: "Addidas Sneaker Blue",
+      img: "/recommend_products/addidas.jpg",
+      price: "$77.50",
     },
   ];
-
+  const router = useRouter();
+  const handleMovePage = () => {
+    router.push("./productDetail");
+  };
   return (
     <Grid.Container gap={1} justify="center">
       {list.map((item, index) => (
@@ -102,6 +75,7 @@ export default function ProductList() {
           <Card
             isPressable
             isHoverable
+            onPress={handleMovePage}
             variant="flat"
             css={{
               backgroundColor: "#fff",
@@ -121,7 +95,7 @@ export default function ProductList() {
               }}
             >
               <Card.Image
-                src={"https://nextui.org" + item.img}
+                src={item.img}
                 objectFit="cover"
                 width={250}
                 height={300}
@@ -142,8 +116,8 @@ export default function ProductList() {
               >
                 <Text b>{item.title}</Text>
                 <Text
+                  color="secondary"
                   css={{
-                    color: "#000",
                     fontWeight: "$semibold",
                     fontSize: "$sm",
                   }}
@@ -165,7 +139,7 @@ export default function ProductList() {
                     fontSize: "$sm",
                   }}
                 >
-                  description
+                  2 days ago
                 </Text>
                 <Button
                   rounded
@@ -177,7 +151,7 @@ export default function ProductList() {
                     width: "20px",
                   }}
                 >
-                  Add to Cart
+                  Add to Favorite
                 </Button>
               </div>
             </Card.Footer>

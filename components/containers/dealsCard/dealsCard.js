@@ -9,47 +9,48 @@ import "swiper/css/free-mode";
 import "swiper/css/scrollbar";
 import { Scrollbar, FreeMode, Autoplay } from "swiper";
 import ReactStars from "react-rating-stars-component";
+import { useRouter } from "next/router";
 export default function DealsCard() {
   const list = [
     {
-      title: "Orange",
-      img: "/images/fruit-1.jpeg",
+      title: "Gift for sell",
+      img: "/trending/1.jpeg",
       price: "$5.50",
     },
     {
-      title: "Tangerine",
-      img: "/images/fruit-2.jpeg",
-      price: "$3.00",
+      title: "Varsity jacket",
+      img: "/trending/1.jpg",
+      price: "$9.00",
     },
     {
-      title: "Cherry",
-      img: "/images/fruit-3.jpeg",
-      price: "$10.00",
+      title: "Airpod 1 with case",
+      img: "/trending/2.jpg",
+      price: "$100.00",
     },
     {
-      title: "Lemon",
-      img: "/images/fruit-4.jpeg",
-      price: "$5.30",
+      title: "PS5",
+      img: "/trending/3.jpg",
+      price: "$555.30",
     },
     {
-      title: "Avocado",
-      img: "/images/fruit-5.jpeg",
-      price: "$15.70",
+      title: "Beanies",
+      img: "/trending/5.jpg",
+      price: "$4.70",
     },
     {
-      title: "Lemon 2",
-      img: "/images/fruit-6.jpeg",
-      price: "$8.00",
+      title: "Football Ball",
+      img: "/trending/6.jpg",
+      price: "$18.00",
     },
     {
-      title: "Banana",
-      img: "/images/fruit-7.jpeg",
+      title: "Moon Lamp",
+      img: "/trending/8.jpg",
       price: "$7.50",
     },
     {
-      title: "Watermelon",
-      img: "/images/fruit-8.jpeg",
-      price: "$12.20",
+      title: "Office Chair",
+      img: "/trending/7.jpg",
+      price: "$32.20",
     },
   ];
 
@@ -57,6 +58,10 @@ export default function DealsCard() {
     size: 23,
     value: 2.5,
     edit: false,
+  };
+  const router = useRouter();
+  const handleMovePage = () => {
+    router.push("./productDetail");
   };
   return (
     <>
@@ -106,6 +111,7 @@ export default function DealsCard() {
               <Card
                 isPressable
                 isHoverable
+                onPress={handleMovePage}
                 variant="flat"
                 css={{
                   backgroundColor: "#fff",
@@ -121,7 +127,7 @@ export default function DealsCard() {
                   }}
                 >
                   <Card.Image
-                    src={"https://nextui.org" + item.img}
+                    src={item.img}
                     objectFit="cover"
                     width="100%"
                     height={300}
@@ -140,8 +146,8 @@ export default function DealsCard() {
                   >
                     <Text b>{item.title}</Text>
                     <Text
+                      color="secondary"
                       css={{
-                        color: "#000",
                         fontWeight: "$semibold",
                         fontSize: "$sm",
                       }}
@@ -163,9 +169,8 @@ export default function DealsCard() {
                         fontSize: "$sm",
                       }}
                     >
-                      description
+                      a day ago
                     </Text>
-                    <ReactStars {...firstExample} />
                     <Button
                       rounded
                       flat
@@ -176,7 +181,7 @@ export default function DealsCard() {
                         width: "20px",
                       }}
                     >
-                      Add to Cart
+                      Add to Favorite
                     </Button>
                   </div>
                 </Card.Footer>

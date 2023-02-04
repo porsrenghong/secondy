@@ -4,18 +4,32 @@ import {
   Avatar,
   Dropdown,
   Input,
-  useTheme,
   Button,
 } from "@nextui-org/react";
-import { User } from "react-iconly";
 import { SearchIcon } from "./SearchIcon.js";
 import Link from "next/link";
-export default function NavigationBar() {
+import { signOut } from "firebase/auth";
+import { auth } from "../../../firebase.js";
+import { Logout, User } from "react-iconly";
+import { useRouter } from "next/router";
+export default function NavAfterLogin() {
+  const router = useRouter();
+  const handleLogOut = () => {
+    signOut(auth)
+      .then(() => {
+        // Sign-out successful.
+        console.log("Sign-out successful");
+        router.push("./");
+      })
+      .catch((error) => {
+        // An error happened.
+      });
+  };
   return (
     <Navbar isBordered maxWidth="lg">
       <Link href="/">
         <Navbar.Brand css={{ mr: "$4" }}>
-          <Text b color="black" css={{ mr: "$11" }} >
+          <Text b color="black" css={{ mr: "$11" }}>
             SECONDY
           </Text>
         </Navbar.Brand>
@@ -65,21 +79,30 @@ export default function NavigationBar() {
               />
             </Dropdown.Trigger>
           </Navbar.Item>
-          <Link href="/signUpPage">
-            <Dropdown.Menu
-              aria-label="User menu actions"
-              color="secondary"
-              onAction={(actionKey) => console.log({ actionKey })}
-            >
-              <Dropdown.Item key="favorite">Favorite</Dropdown.Item>
-              <Dropdown.Item key="myProducts">My Products</Dropdown.Item>
-              <Dropdown.Item key="logout" withDivider color="success">
-                <Button light color="success">
-                  <Text color="success">Sign In</Text>
-                </Button>
-              </Dropdown.Item>
-            </Dropdown.Menu>
-          </Link>
+
+          <Dropdown.Menu
+            aria-label="User menu actions"
+            color="secondary"
+            onAction={(actionKey) => console.log({ actionKey })}
+          >
+            <Dropdown.Item key="favorite">
+              <Link href="./comingSoonPage" style={{ color: "#000000" }}>
+                Favorite
+              </Link>
+            </Dropdown.Item>
+
+            <Dropdown.Item key="myProducts">
+              <Link href="./salePage" style={{ color: "#000000" }}>
+                My Products
+              </Link>
+            </Dropdown.Item>
+
+            <Dropdown.Item key="logout" withDivider color="error">
+              <Button light color="error" onPress={handleLogOut}>
+                <Text color="error">Sign Out</Text>
+              </Button>
+            </Dropdown.Item>
+          </Dropdown.Menu>
         </Dropdown>
       </Navbar.Content>
     </Navbar>
